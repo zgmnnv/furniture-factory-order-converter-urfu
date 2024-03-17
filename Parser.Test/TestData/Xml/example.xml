@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order>
+    <Number>КЛ220</Number>
+    <Name>Р.С-10. Стол офисный</Name>
+    <Article>Р.С-10</Article>
+    <Specification>
+        <Item>
+            <Position>1</Position>
+            <Thickness>22</Thickness>
+            <Name>столешница</Name>
+            <Length>1000</Length>
+            <Width>680</Width>
+            <Material>ЛДСП Белый 22</Material>
+            <Quantity>1</Quantity>
+        </Item>
+        <Item>
+            <Position>2</Position>
+            <Thickness>16</Thickness>
+            <Name>опора</Name>
+            <Length>724</Length>
+            <Width>590</Width>
+            <Material>ЛДСП Белый 16</Material>
+            <Quantity>1</Quantity>
+        </Item>
+        <Item>
+            <Position>3</Position>
+            <Thickness>16</Thickness>
+            <Name>царга</Name>
+            <Length>960</Length>
+            <Width>388</Width>
+            <Material>ЛДСП Белый 16</Material>
+            <Quantity>1</Quantity>
+        </Item>
+    </Specification>
+</Order>

@@ -1,0 +1,38 @@
+{
+  "Order": {
+    "Number": "КЛ220",
+    "Name": "Р.С-10. Стол офисный",
+    "Article": "Р.С-10",
+    "Specification": {
+      "Item": [
+        {
+          "Position": "1",
+          "Thickness": "22",
+          "Name": "столешница",
+          "Length": "1000",
+          "Width": "680",
+          "Material": "ЛДСП Белый 22",
+          "Quantity": "1"
+        },
+        {
+          "Position": "2",
+          "Thickness": "16",
+          "Name": "опора",
+          "Length": "724",
+          "Width": "590",
+          "Material": "ЛДСП Белый 16",
+          "Quantity": "1"
+        },
+        {
+          "Position": "3",
+          "Thickness": "16",
+          "Name": "царга",
+          "Length": "960",
+          "Width": "388",
+          "Material": "ЛДСП Белый 16",
+          "Quantity": "1"
+        }
+      ]
+    }
+  }
+}
