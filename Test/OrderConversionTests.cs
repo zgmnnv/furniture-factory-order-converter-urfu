@@ -1,9 +1,9 @@
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
-namespace Parser.Test;
+namespace Test;
 
-public class DataParsingTests
+public class OrderConversionTests
 {
     private const string ExpectedName = "Р.С-10. Стол офисный";
     private const string ExpectedNumber = "КЛ220"; 
@@ -15,16 +15,16 @@ public class DataParsingTests
     private string _jsonFilePath;
     private string _xmlFilePath;
 
-    private Service.Service _orderParser;
+    private Service.ConverterService _orderParser;
 
     [SetUp]
     public void Setup()
     {
-        _jsonFolderPath = "/Users/zgmnnv/Dev/Parser/Parser.Test/TestData/Json";
-        _exampleJsonPath = "/Users/zgmnnv/Dev/Parser/Parser.Test/TestData/Json/example.json";
-        _xmlFolderPath = "/Users/zgmnnv/Dev/Parser/Parser.Test/TestData/Xml";
-        _exampleXmlPath = "/Users/zgmnnv/Dev/Parser/Parser.Test/TestData/Xml/example.xml";
-        _orderParser = new Service.Service();
+        _jsonFolderPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Json";
+        _exampleJsonPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Json/example.json";
+        _xmlFolderPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Xml";
+        _exampleXmlPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Xml/example.xml";
+        _orderParser = new Service.ConverterService();
     }
 
     [TearDown]

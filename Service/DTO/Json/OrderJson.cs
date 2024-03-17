@@ -1,4 +1,4 @@
-namespace Parser.Service.DTO.Json;
+namespace Service.DTO.Json;
 
 public class OrderJson
 {

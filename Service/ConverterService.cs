@@ -1,13 +1,14 @@
 ﻿using System.Xml.Serialization;
 using Newtonsoft.Json;
-using Parser.Service.DTO.Json;
-using Parser.Service.DTO.Xml;
+using Service.DTO.Json;
+using Service.DTO.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
-using Specification = Parser.Service.DTO.Xml.Specification;
+using Item = Service.DTO.Json.Item;
+using Specification = Service.DTO.Xml.Specification;
 
-namespace Parser.Service;
+namespace Service;
 
-public class Service
+public class ConverterService
 {
     public OrderXml DeserializeXml(string xmlFilePath)
     {
@@ -76,11 +77,11 @@ public class Service
     public async Task ConvertXmlToJsonAsync(string xmlFilePath, string jsonFilePath)
     {
         var xmlDto = DeserializeXml(xmlFilePath);
-        var jsonItemList = new List<DTO.Json.Item>();
+        var jsonItemList = new List<Item>();
 
         foreach (var item in xmlDto.Specification.Item)
         {
-            var jsonItem = new DTO.Json.Item
+            var jsonItem = new Item
             {
                 Name = item.Name,
                 Position = item.Position.ToString(),

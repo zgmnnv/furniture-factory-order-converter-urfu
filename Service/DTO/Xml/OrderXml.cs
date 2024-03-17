@@ -1,6 +1,6 @@
 using System.Xml.Serialization;
 
-namespace Parser.Service.DTO.Xml;
+namespace Service.DTO.Xml;
 
 [XmlRoot(ElementName = "Order")]
 public class OrderXml
