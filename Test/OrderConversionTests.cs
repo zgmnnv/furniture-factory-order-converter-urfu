@@ -1,3 +1,4 @@
+using DTO;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
 
@@ -20,10 +21,10 @@ public class OrderConversionTests
     [SetUp]
     public void Setup()
     {
-        _jsonFolderPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Json";
-        _exampleJsonPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Json/example.json";
-        _xmlFolderPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Xml";
-        _exampleXmlPath = "/Users/zgmnnv/Dev/Parser/Test/TestData/Xml/example.xml";
+        _jsonFolderPath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/Json";
+        _exampleJsonPath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/Json/example.json";
+        _xmlFolderPath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/Xml";
+        _exampleXmlPath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/example.xml";
         _orderParser = new Service.ConverterService();
     }
 
@@ -43,6 +44,30 @@ public class OrderConversionTests
         {
             File.Delete(_jsonFilePath);
         }
+    }
+
+    [Test]
+    [Category("RealExamples")]
+    public void Deserialize_RealShortXml_Ok(){
+
+        var filePath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/Xml/model1.xml";
+        var project = _orderParser.DeserializeFromXmlFile<ProjectDto>(filePath);
+
+        Assert.That(project, Is.Not.Null);
+        Assert.That(project.Version, Is.EqualTo("11.7.1.30366"));
+        Assert.That(project.Product.Name, Is.EqualTo("Модель2"));
+    }
+
+    [Test]
+    [Category("RealExamples")]
+    public void Deserialize_RealFullXml_Ok(){
+        
+        var filePath = "/Users/zgmnnv/Dev/Urfu/furniture-factory-order-converter-urfu/Test/TestData/Xml/model2.xml";
+        var project = _orderParser.DeserializeFromXmlFile<ProjectDto>(filePath);
+
+        Assert.That(project, Is.Not.Null);
+        Assert.That(project.Version, Is.EqualTo("11.7.1.30366"));
+        Assert.That(project.Product.Name, Is.EqualTo("Модель2"));
     }
 
     [Test]
