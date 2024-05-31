@@ -1,4 +1,5 @@
 ﻿using System.Xml.Serialization;
+using DTO;
 using Newtonsoft.Json;
 using Service.DTO.Json;
 using Service.DTO.Xml;
@@ -10,6 +11,19 @@ namespace Service;
 
 public class ConverterService
 {
+    public T DeserializeFromXmlFile<T>(string filePath)
+    {
+        var serializer = new XmlSerializer(typeof(T));
+        var stream = new FileStream(filePath, FileMode.Open);
+
+        var result = (T)serializer.Deserialize(stream);
+
+        if (result is null){
+            throw new ArgumentException("Не удалось распарсить XML. Вернулся NULL");
+        }
+        return result;
+    }
+    
     public OrderXml DeserializeXml(string xmlFilePath)
     {
         var serializer = new XmlSerializer(typeof(OrderXml));
